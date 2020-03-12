@@ -1,0 +1,2 @@
+arm_kinematics
+-DCATKIN_DEVEL_PREFIX=/home/fynnk/Documents/Eyetracking/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/fynnk/Documents/Eyetracking/catkin_ws/install -G Unix Makefiles

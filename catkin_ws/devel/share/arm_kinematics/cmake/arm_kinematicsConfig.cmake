@@ -67,14 +67,14 @@ set(arm_kinematics_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(arm_kinematics_SOURCE_PREFIX /home/fynnk/Documents/Eyetracking/catkin_ws/src/arm_kinematics)
-  set(arm_kinematics_DEVEL_PREFIX /home/fynnk/Documents/Eyetracking/catkin_ws/devel)
+  set(arm_kinematics_SOURCE_PREFIX /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/src/arm_kinematics)
+  set(arm_kinematics_DEVEL_PREFIX /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel)
   set(arm_kinematics_INSTALL_PREFIX "")
   set(arm_kinematics_PREFIX ${arm_kinematics_DEVEL_PREFIX})
 else()
   set(arm_kinematics_SOURCE_PREFIX "")
   set(arm_kinematics_DEVEL_PREFIX "")
-  set(arm_kinematics_INSTALL_PREFIX /home/fynnk/Documents/Eyetracking/catkin_ws/install)
+  set(arm_kinematics_INSTALL_PREFIX /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install)
   set(arm_kinematics_PREFIX ${arm_kinematics_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(arm_kinematics_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/fynnk/Documents/Eyetracking/catkin_ws/devel/include " STREQUAL " ")
+if(NOT "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel/include " STREQUAL " ")
   set(arm_kinematics_INCLUDE_DIRS "")
-  set(_include_dirs "/home/fynnk/Documents/Eyetracking/catkin_ws/devel/include")
+  set(_include_dirs "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/fynnk/Documents/Eyetracking/catkin_ws/devel/include " STREQUAL " "
         message(FATAL_ERROR "Project 'arm_kinematics' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'arm_kinematics' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/fynnk/Documents/Eyetracking/catkin_ws/src/arm_kinematics/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'arm_kinematics' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/src/arm_kinematics/${idir}'.  ${_report}")
     endif()
     _list_append_unique(arm_kinematics_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/fynnk/Documents/Eyetracking/catkin_ws/devel/lib;/home/fynnk/Documents/Eyetracking/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel/lib;/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

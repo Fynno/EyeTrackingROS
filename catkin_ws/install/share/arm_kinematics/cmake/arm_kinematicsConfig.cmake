@@ -67,14 +67,14 @@ set(arm_kinematics_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(arm_kinematics_SOURCE_PREFIX /home/fynnk/Documents/Eyetracking/catkin_ws/src/arm_kinematics)
-  set(arm_kinematics_DEVEL_PREFIX /home/fynnk/Documents/Eyetracking/catkin_ws/devel)
+  set(arm_kinematics_SOURCE_PREFIX /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/src/arm_kinematics)
+  set(arm_kinematics_DEVEL_PREFIX /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel)
   set(arm_kinematics_INSTALL_PREFIX "")
   set(arm_kinematics_PREFIX ${arm_kinematics_DEVEL_PREFIX})
 else()
   set(arm_kinematics_SOURCE_PREFIX "")
   set(arm_kinematics_DEVEL_PREFIX "")
-  set(arm_kinematics_INSTALL_PREFIX /home/fynnk/Documents/Eyetracking/catkin_ws/install)
+  set(arm_kinematics_INSTALL_PREFIX /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install)
   set(arm_kinematics_PREFIX ${arm_kinematics_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/fynnk/Documents/Eyetracking/catkin_ws/install/lib;/home/fynnk/Documents/Eyetracking/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

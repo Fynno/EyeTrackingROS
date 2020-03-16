@@ -1,4 +1,4 @@
-prefix=/home/fynnk/Documents/Eyetracking/catkin_ws/install
+prefix=/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install
 
 Name: arm_kinematics
 Description: Description of arm_kinematics

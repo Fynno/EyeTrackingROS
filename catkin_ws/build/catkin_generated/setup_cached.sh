@@ -7,4 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/fynnk/Documents/Eyetracking/catkin_ws/build"
+export PKG_CONFIG_PATH="/opt/ros/melodic/lib/pkgconfig"
+export PWD="/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build"
+export PYTHONPATH="/opt/ros/melodic/lib/python2.7/dist-packages"

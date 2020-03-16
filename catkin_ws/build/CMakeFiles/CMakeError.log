@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/fynnk/Documents/Eyetracking/catkin_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_69720/fast"
-/usr/bin/make -f CMakeFiles/cmTC_69720.dir/build.make CMakeFiles/cmTC_69720.dir/build
-make[1]: Entering directory '/home/fynnk/Documents/Eyetracking/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_69720.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_69720.dir/CheckSymbolExists.c.o   -c /home/fynnk/Documents/Eyetracking/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_69720
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69720.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_69720.dir/CheckSymbolExists.c.o  -o cmTC_69720 
-CMakeFiles/cmTC_69720.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_121ae/fast"
+/usr/bin/make -f CMakeFiles/cmTC_121ae.dir/build.make CMakeFiles/cmTC_121ae.dir/build
+make[1]: Entering directory '/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_121ae.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_121ae.dir/CheckSymbolExists.c.o   -c /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_121ae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_121ae.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_121ae.dir/CheckSymbolExists.c.o  -o cmTC_121ae 
+CMakeFiles/cmTC_121ae.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_69720.dir/build.make:97: recipe for target 'cmTC_69720' failed
-make[1]: *** [cmTC_69720] Error 1
-make[1]: Leaving directory '/home/fynnk/Documents/Eyetracking/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_69720/fast' failed
-make: *** [cmTC_69720/fast] Error 2
+CMakeFiles/cmTC_121ae.dir/build.make:97: recipe for target 'cmTC_121ae' failed
+make[1]: *** [cmTC_121ae] Error 1
+make[1]: Leaving directory '/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_121ae/fast' failed
+make: *** [cmTC_121ae/fast] Error 2
 
-File /home/fynnk/Documents/Eyetracking/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/fynnk/Documents/Eyetracking/catkin_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_63c96/fast"
-/usr/bin/make -f CMakeFiles/cmTC_63c96.dir/build.make CMakeFiles/cmTC_63c96.dir/build
-make[1]: Entering directory '/home/fynnk/Documents/Eyetracking/catkin_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_63c96.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_63c96.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_63c96
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63c96.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_63c96.dir/CheckFunctionExists.c.o  -o cmTC_63c96 -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_fe6d6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fe6d6.dir/build.make CMakeFiles/cmTC_fe6d6.dir/build
+make[1]: Entering directory '/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fe6d6.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_fe6d6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fe6d6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe6d6.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_fe6d6.dir/CheckFunctionExists.c.o  -o cmTC_fe6d6 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_63c96.dir/build.make:97: recipe for target 'cmTC_63c96' failed
-make[1]: *** [cmTC_63c96] Error 1
-make[1]: Leaving directory '/home/fynnk/Documents/Eyetracking/catkin_ws/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_63c96/fast' failed
-make: *** [cmTC_63c96/fast] Error 2
+CMakeFiles/cmTC_fe6d6.dir/build.make:97: recipe for target 'cmTC_fe6d6' failed
+make[1]: *** [cmTC_fe6d6] Error 1
+make[1]: Leaving directory '/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fe6d6/fast' failed
+make: *** [cmTC_fe6d6/fast] Error 2
 
 

@@ -5,6 +5,7 @@
 
 import rospy
 from arm_kinematics.msg import Joint_angles
+from arm_kinematics.msg import set_point
 
 import numpy as np
 from math import sin, cos, pi, acos, asin, atan2, sqrt
@@ -21,21 +22,22 @@ def calcJointCord(p_world,parameters):
     t1 = atan2(p_world[1],p_world[0])-atan2(P_t1_o[1],P_t1_o[0])
     return [t1,t2,t3]
 
-def talker():
+def callback(data):
     pub = rospy.Publisher('joint_coordinates',Joint_angles, queue_size=10)
+    msg = Joint_angles()
+    msg.t1 = calcJointCord([data.x,data.y,data.z],fixedParam)[0]
+    msg.t2 = calcJointCord([data.x,data.y,data.z],fixedParam)[1]
+    msg.t3 = calcJointCord([data.x,data.y,data.z],fixedParam)[2]
+    rospy.loginfo(msg)
+    pub.publish(msg)
+
+def listener():
     rospy.init_node('FK', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    while not rospy.is_shutdown():
-        msg = Joint_angles()
-        msg.t1 = calcJointCord([0.2,-0.1,0],fixedParam)[0]
-        msg.t2 = calcJointCord([0.2,-0.1,0],fixedParam)[1]
-        msg.t3 = calcJointCord([0.2,-0.1,0],fixedParam)[2]
-        rospy.loginfo(msg)
-        pub.publish(msg)
-        rate.sleep()
+    rospy.Subscriber("world_coordinates",set_point,callback)
+    rospy.spin()
 
 if __name__ == '__main__':
     try:
-        talker()
+        listener()
     except rospy.ROSInterruptException:
         pass

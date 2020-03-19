@@ -2,4 +2,4 @@
 source_root_dir = "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel;/opt/ros/melodic".split(';') if "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel;/opt/ros/melodic" != "" else []
+underlay_workspaces = "/opt/ros/melodic".split(';') if "/opt/ros/melodic" != "" else []

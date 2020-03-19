@@ -5,7 +5,5 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
-subdirs("joint_state_publisher/joint_state_publisher_gui")
 subdirs("simulation")
 subdirs("arm_kinematics")
-subdirs("joint_state_publisher/joint_state_publisher")

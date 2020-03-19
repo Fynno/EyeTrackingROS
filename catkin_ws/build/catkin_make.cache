@@ -1,2 +1,2 @@
-arm_kinematics:joint_state_publisher/joint_state_publisher:joint_state_publisher/joint_state_publisher_gui:simulation
+arm_kinematics:simulation
 -DCATKIN_DEVEL_PREFIX=/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install -G Unix Makefiles

@@ -7,15 +7,15 @@ import struct
 
 
 class set_point(genpy.Message):
-  _md5sum = "95da2541c9d6989c0876f480a9b1c7e4"
+  _md5sum = "4a842b65f413084dc2b10fb484ea7f17"
   _type = "arm_kinematics/set_point"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """int64 x
-int64 y
-int64 z
+  _full_text = """float64 x
+float64 y
+float64 z
 """
   __slots__ = ['x','y','z']
-  _slot_types = ['int64','int64','int64']
+  _slot_types = ['float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -35,15 +35,15 @@ int64 z
       super(set_point, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.x is None:
-        self.x = 0
+        self.x = 0.
       if self.y is None:
-        self.y = 0
+        self.y = 0.
       if self.z is None:
-        self.z = 0
+        self.z = 0.
     else:
-      self.x = 0
-      self.y = 0
-      self.z = 0
+      self.x = 0.
+      self.y = 0.
+      self.z = 0.
 
   def _get_types(self):
     """
@@ -58,7 +58,7 @@ int64 z
     """
     try:
       _x = self
-      buff.write(_get_struct_3q().pack(_x.x, _x.y, _x.z))
+      buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -72,7 +72,7 @@ int64 z
       _x = self
       start = end
       end += 24
-      (_x.x, _x.y, _x.z,) = _get_struct_3q().unpack(str[start:end])
+      (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -86,7 +86,7 @@ int64 z
     """
     try:
       _x = self
-      buff.write(_get_struct_3q().pack(_x.x, _x.y, _x.z))
+      buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -101,7 +101,7 @@ int64 z
       _x = self
       start = end
       end += 24
-      (_x.x, _x.y, _x.z,) = _get_struct_3q().unpack(str[start:end])
+      (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -110,9 +110,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3q = None
-def _get_struct_3q():
-    global _struct_3q
-    if _struct_3q is None:
-        _struct_3q = struct.Struct("<3q")
-    return _struct_3q
+_struct_3d = None
+def _get_struct_3d():
+    global _struct_3d
+    if _struct_3d is None:
+        _struct_3d = struct.Struct("<3d")
+    return _struct_3d

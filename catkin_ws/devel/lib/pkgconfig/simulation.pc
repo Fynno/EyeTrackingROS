@@ -2,7 +2,7 @@ prefix=/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/devel
 
 Name: simulation
 Description: Description of simulation
-Version: 0.0.0
+Version: 0.0.1
 Cflags: 
 Libs: -L${prefix}/lib 
 Requires: 

@@ -52,3 +52,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/simulation" TYPE FILE FILES "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/src/simulation/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/simulation" TYPE DIRECTORY FILES
+    "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/src/simulation/launch"
+    "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/src/simulation/rviz"
+    "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/src/simulation/urdf"
+    )
+endif()
+

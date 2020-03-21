@@ -9,7 +9,6 @@ if [ -n "$DESTDIR" ] ; then
             /bin/echo "otherwise python's distutils will bork things."
             exit 1
     esac
-    DESTDIR_ARG="--root=$DESTDIR"
 fi
 
 echo_and_run() { echo "+ $@" ; "$@" ; }
@@ -29,5 +28,5 @@ echo_and_run /usr/bin/env \
     "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/src/joint_state_publisher/joint_state_publisher_gui/setup.py" \
     build --build-base "/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/build/joint_state_publisher/joint_state_publisher_gui" \
     install \
-    $DESTDIR_ARG \
+    --root="${DESTDIR-/}" \
     --install-layout=deb --prefix="/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install" --install-scripts="/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/bin"

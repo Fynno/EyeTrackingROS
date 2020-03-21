@@ -40,4 +40,38 @@
     <child link="shoulder"/>
   </joint>
 
+  <link name="upper_arm">
+  <visual>
+    <origin rpy="1.570796 0 0" xyz="0 0.15 0"/>
+    <geometry>
+      <cylinder length="0.3" radius="0.04"/>
+    </geometry>
+  </visual>
+  </link>
+
+  <joint name="t2" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5" />
+    <origin rpy="-1.570796 0 0" xyz="0 0 0.3"/>
+    <parent link="shoulder"/>
+    <child link="upper_arm"/>
+  </joint>
+
+  <link name="forearm">
+   <visual>
+    <origin rpy="0 1.570796 0" xyz="-0.175 0 0"/>
+    <geometry>
+      <cylinder length="0.35" radius="0.04"/>
+    </geometry>
+  </visual> 
+  </link>
+
+  <joint name="t3" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5" />
+    <origin rpy="0 0 0" xyz="0.35 0 0"/>
+    <parent link="upper_arm"/>
+    <child link="forearm"/>
+  </joint>
+
 </robot>

@@ -7,6 +7,11 @@
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/setup.zsh
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/local_setup.zsh
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/.rosinstall
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/lib/pkgconfig/joint_state_publisher_gui.pc
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/joint_state_publisher_gui/cmake/joint_state_publisher_guiConfig.cmake
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/joint_state_publisher_gui/cmake/joint_state_publisher_guiConfig-version.cmake
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/joint_state_publisher_gui/package.xml
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/lib/joint_state_publisher_gui/joint_state_publisher_gui
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/arm_kinematics/msg/Joint_angles.msg
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/arm_kinematics/msg/set_point.msg
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/arm_kinematics/cmake/arm_kinematics-msg-paths.cmake
@@ -38,6 +43,11 @@
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/arm_kinematics/cmake/arm_kinematicsConfig.cmake
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/arm_kinematics/cmake/arm_kinematicsConfig-version.cmake
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/arm_kinematics/package.xml
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/lib/pkgconfig/joint_state_publisher.pc
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/joint_state_publisher/cmake/joint_state_publisherConfig.cmake
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/joint_state_publisher/cmake/joint_state_publisherConfig-version.cmake
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/joint_state_publisher/package.xml
+/home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/lib/joint_state_publisher/joint_state_publisher
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/lib/pkgconfig/simulation.pc
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/simulation/cmake/simulationConfig.cmake
 /home/fynn/Documents/unistuff/PA/EyeTrackingROS/catkin_ws/install/share/simulation/cmake/simulationConfig-version.cmake

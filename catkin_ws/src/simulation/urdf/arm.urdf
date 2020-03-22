@@ -33,8 +33,8 @@
   </joint>
 
   <joint name="t1" type="revolute">
-    <axis xyz="0 0 1" />
-    <limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000.0" lower="0.0" upper="3.14159265" velocity="0.5" />
     <origin rpy="1.570796 0 0" xyz="0 0 0.04"/>
     <parent link="base_extension"/>
     <child link="shoulder"/>
@@ -50,8 +50,8 @@
   </link>
 
   <joint name="t2" type="revolute">
-    <axis xyz="0 0 1" />
-    <limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5" />
+    <axis xyz="0 -1 0" />
+    <limit effort="1000.0" lower="-1.570796" upper="1.570796" velocity="0.5" />
     <origin rpy="-1.570796 0 0" xyz="0 0 0.3"/>
     <parent link="shoulder"/>
     <child link="upper_arm"/>
@@ -59,7 +59,7 @@
 
   <link name="forearm">
    <visual>
-    <origin rpy="0 1.570796 0" xyz="-0.175 0 0"/>
+    <origin rpy="0 1.570796 0" xyz="0.175 0 0"/>
     <geometry>
       <cylinder length="0.35" radius="0.04"/>
     </geometry>
@@ -68,8 +68,8 @@
 
   <joint name="t3" type="revolute">
     <axis xyz="0 0 1" />
-    <limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5" />
-    <origin rpy="0 0 0" xyz="0.35 0 0"/>
+    <limit effort="1000.0" lower="-1.570796" upper="1.570796" velocity="0.5" />
+    <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="upper_arm"/>
     <child link="forearm"/>
   </joint>

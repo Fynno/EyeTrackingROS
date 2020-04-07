@@ -4,7 +4,8 @@
 ## to the 'joint_coordinates' topic
 
 import rospy
-from arm_kinematics.msg import Joint_angles
+from std_msgs.msg import Header
+from sensor_msgs.msg import JointState
 from arm_kinematics.msg import set_point
 
 import numpy as np
@@ -22,21 +23,39 @@ def calcJointCord(p_world,parameters):
     t1 = atan2(p_world[1],p_world[0])-atan2(P_t1_o[1],P_t1_o[0])
     return [t1,t2,t3]
 
-def callback(data):
-    pub = rospy.Publisher('joint_coordinates',Joint_angles, queue_size=10)
-    msg = Joint_angles()
-    msg.t1 = calcJointCord([data.x,data.y,data.z],fixedParam)[0]
-    msg.t2 = calcJointCord([data.x,data.y,data.z],fixedParam)[1]
-    msg.t3 = calcJointCord([data.x,data.y,data.z],fixedParam)[2]
-    rospy.loginfo(msg)
-    pub.publish(msg)
+class Talker:
+    seq=1
+    msg = JointState()
+
+    def __init__(self):
+        self.msg.header = Header()
+        self.msg.name = ['t1','t2','t3']
+        self.msg.position = [0,0,0]
+
+    def callback(self, data):
+        self.seq = self.seq +1
+        self.msg.header.seq = self.seq
+        now = rospy.get_rostime()
+        self.msg.header.stamp.secs = now.secs
+        self.msg.header.stamp.nsecs = now.nsecs
+        pub = rospy.Publisher('joint_states',JointState, queue_size=10)
+        try:
+            self.msg.position = calcJointCord([data.x,data.y,data.z],fixedParam)
+            rospy.loginfo(self.msg)
+            pub.publish(self.msg)
+        except ValueError:
+            rospy.loginfo(self.msg)
+            pub.publish(self.msg)
+            print("Gazepoint can not be reached!")
+
 
 def listener():
     rospy.init_node('FK', anonymous=True)
-    rospy.Subscriber("world_coordinates",set_point,callback)
+    rospy.Subscriber("world_coordinates",set_point,TalkerObj.callback)
     rospy.spin()
 
 if __name__ == '__main__':
+    TalkerObj= Talker()
     try:
         listener()
     except rospy.ROSInterruptException:

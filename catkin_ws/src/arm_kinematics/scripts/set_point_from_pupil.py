@@ -39,9 +39,9 @@ class MessengerNode:
     # Calculate the coordinates the person is looking at
     def world_gaze_point(self,theta,phi):
         gp = {'x':0,'y':0,'z':0}
-        gp['x'] = 0.2+0.094 # Choosing arbitrary value for testing and transform by adding (-0.94/0.07/0.029)
-        gp['z'] =gp['x']  * math.tan(self.phi_0-phi)-0.07
-        gp['y']  =gp['x']  * math.tan(self.theta_0-theta)+0.29
+        gp['x'] = 0.35+0.094 # Choosing arbitrary value for testing and transform by adding (-0.94/0.07/0.029)
+        gp['z'] =(gp['x'] -0.094) * math.tan(self.phi_0-phi)-0.035
+        gp['y']  =(gp['x']-0.094)  * math.tan(self.theta_0-theta)  #+ 0.29 uncomment for simulation
         return gp
 
     def talker(self):
@@ -51,11 +51,15 @@ class MessengerNode:
                 topic, payload = subscriber.recv_multipart()
                 msg = loads(payload)
                 if self.calibration == False:
-                    gp = self.world_gaze_point(msg.get('theta'),msg.get('phi'))
+                    theta =msg.get('theta')
+                    phi =msg.get('phi')
+                    gp = self.world_gaze_point(theta,phi)
                     msg = set_point()
                     msg.x = gp['x']
                     msg.y = gp['y']
                     msg.z = gp['z']
+                    msg.theta = self.theta_0-theta
+                    msg.phi = self.phi_0-phi
                     rospy.loginfo(msg)
                     self.pub.publish(msg)
                     #rate.sleep()

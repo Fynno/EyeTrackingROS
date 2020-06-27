@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<robot name="myfirst">
+  <link name="base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 -0.2" />
+      <geometry>
+        <box size="0.15 0.42 0.6" />
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="base_extension">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.02"/>
+      <geometry>
+        <cylinder length="0.04" radius="0.04"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="shoulder">
+    <visual>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="base_to_extension" type="fixed">
+    <origin rpy="1.570796 0 0" xyz="0 -0.21 0" />
+    <parent link="base_link"/>
+    <child link="base_extension"/> 
+  </joint>
+
+  <joint name="t1" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="1000.0" lower="0.0" upper="3.14159265" velocity="0.5" />
+    <origin rpy="1.570796 0 0" xyz="0 0 0.04"/>
+    <parent link="base_extension"/>
+    <child link="shoulder"/>
+  </joint>
+
+  <link name="upper_arm">
+  <visual>
+    <origin rpy="1.570796 0 0" xyz="0 0.15 0"/>
+    <geometry>
+      <cylinder length="0.3" radius="0.04"/>
+    </geometry>
+  </visual>
+  </link>
+
+  <joint name="t2" type="revolute">
+    <axis xyz="0 -1 0" />
+    <limit effort="1000.0" lower="-1.570796" upper="1.570796" velocity="0.5" />
+    <origin rpy="-1.570796 0 0" xyz="0 0 0.3"/>
+    <parent link="shoulder"/>
+    <child link="upper_arm"/>
+  </joint>
+
+  <link name="forearm">
+   <visual>
+    <origin rpy="0 1.570796 0" xyz="0.175 0 0"/>
+    <geometry>
+      <cylinder length="0.35" radius="0.04"/>
+    </geometry>
+  </visual> 
+  </link>
+
+  <joint name="t3" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-1.570796" upper="1.570796" velocity="0.5" />
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="upper_arm"/>
+    <child link="forearm"/>
+  </joint>
+
+</robot>
